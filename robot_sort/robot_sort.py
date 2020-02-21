@@ -97,7 +97,17 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        arr = self._list
+        n = len(arr)
+        for i in range(n-1, 0, -1):
+            max = 0
+            for j in range(1, i +1):
+                if arr[j] > arr[max]:
+                    max = j
+            temp = arr[i]
+            arr[i] = arr[max]
+            arr[max] = temp
+        return arr
 
 
 if __name__ == "__main__":
